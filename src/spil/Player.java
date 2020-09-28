@@ -28,6 +28,7 @@ public class Player {
 
 
 
+
     public void updatePoints(int newDiceCombinedValue) {
         points = points + newDiceCombinedValue;
     }
