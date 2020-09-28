@@ -7,6 +7,7 @@ public class Player {
     private String name;
     private int points;
     private int winningPoints = 40;
+    private boolean twoSixes;
 
     //constructor: we need player's name before we can create a player object
     //therefore we require a string as parameter and set tít to name field
@@ -20,13 +21,13 @@ public class Player {
         return name;
     }
 
+    public void setTwoSixes() {twoSixes ^= true;} //Switches between true and false when called
 
+    public boolean getTwoSixes() {return twoSixes;}
 
-    public int getPoints() {
-        return points;
-    }
+    public int getPoints() { return points;}
 
-
+    public void resetPoints() {points = 0;}
 
     public void updatePoints(int newDiceCombinedValue) {
         points = points + newDiceCombinedValue;
