@@ -49,20 +49,19 @@ public class Game {
             System.out.println(currentPlayer.getName() + " total points: " + currentPlayer.getPoints());
 
 
-            if(currentPlayer.hasPlayerWonTheGame()){
+            if(Rules.win(dice1Value,dice2Value,currentPlayer)){
                 System.out.println(currentPlayer.getName() + " has won the game! :)");
                 System.out.println("GAME OVER");
                 gameIsRunning = false;
                 return; //exit the method
             }
-
-            if(currentPlayer == player1){
-                currentPlayer = player2;
+            if(!Rules.extraTurn(dice1Value, dice2Value,currentPlayer)) {
+                if (currentPlayer == player1) {
+                    currentPlayer = player2;
+                } else {
+                    currentPlayer = player1;
+                }
             }
-            else{
-                currentPlayer = player1;
-            }
-
             System.out.println("--------------------------------");
             System.out.println();
 
