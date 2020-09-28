@@ -6,7 +6,7 @@ public class Rules {
 
     static Player checkRules(int Dice1, int Dice2, Player Player) {
         Player = twoOnes(Dice1,Dice2,Player);
-        Player = extraTurn(Dice1,Dice2,Player);
+        //Player = extraTurn(Dice1,Dice2,Player);
         Player = win(Dice1,Dice2,Player);
         return Player;
     }
@@ -19,27 +19,25 @@ public class Rules {
         return Player;
     }
 
-    static Player extraTurn(int Dice1, int Dice2, Player Player) {
+    static boolean extraTurn(int Dice1, int Dice2, Player Player) {
         if (Dice1 == Dice2) {
-            Player.turn = true;
+            return true;
         }
 
-        return Player;
+        return false;
     }
 
 
-    static Player win(int Dice1, int Dice2, Player Player) {
+    static boolean win(int Dice1, int Dice2, Player Player) {
         if (Player.points >= 40) {
             if (Dice1 == Dice2) {
-                Player.win = true;
+                return true;
             }
         }
         else if ((Player.previousPoints == 12) && (Dice1 == 6) && (Dice2 == 6)) {
-            Player.win = true;
+            return true;
         }
         else {
-            Player.win = false;
+            return false;
         }
-        return Player;
     }
-}
