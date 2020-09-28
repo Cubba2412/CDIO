@@ -26,7 +26,7 @@ public class Player {
         return points;
     }
 
-
+    public void resetPoints() {points = 0;}
 
     public void updatePoints(int newDiceCombinedValue) {
         points = points + newDiceCombinedValue;

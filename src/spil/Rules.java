@@ -1,6 +1,6 @@
 package spil;
 
-import Player;
+import Player.Player;
 
 public class Rules {
 
@@ -14,7 +14,7 @@ public class Rules {
     static Player twoOnes(int Dice1, int Dice2, Player Player) {
         if ((Dice1 == 1 && Dice2 == 1)) {
             //Player looses all points
-            Player.points == 0;
+            Player.resetPoints();
         }
         return Player;
     }
@@ -32,12 +32,10 @@ public class Rules {
         if (Player.points >= 40) {
             if (Dice1 == Dice2) {
                 return true;
+            } else if ((Player.previousPoints == 12) && (Dice1 == 6) && (Dice2 == 6)) {
+                return true;
+            } else {
+                return false;
             }
-        }
-        else if ((Player.previousPoints == 12) && (Dice1 == 6) && (Dice2 == 6)) {
-            return true;
-        }
-        else {
-            return false;
         }
     }
