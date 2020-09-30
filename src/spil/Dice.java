@@ -2,15 +2,23 @@ package spil ;
 
 import java.util.Random;
 
-class Dice  {
+class Dice
+{
+    final int MinValue = 1;
+    final int MaxValue = 6;
+          int Currentvalue;
 
-    public static void main (String... args) {
-        Random ran = new Random();
-        int dice1, dice2;
+  //This is the constructor for Dice.
+  public Dice()
+  {
 
-        for(int x=0;x<1;x++);
-        dice1 = ran.nextInt(6)+1;
-        dice2= ran.nextInt(6)+1;
-        System.out.println(dice1+dice2);
-    }
+  }
+
+  public int roll()
+  {
+      Random ran = new Random();
+      Currentvalue = ran.nextInt(MaxValue) + MinValue;
+      //Returns the currentvalue
+      return Currentvalue;
+  }
 }
