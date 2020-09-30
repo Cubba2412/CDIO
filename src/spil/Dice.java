@@ -2,7 +2,7 @@ package spil ;
 
 import java.util.Random;
 
-class Dice
+public class Dice
 {
     final int MinValue = 1;
     final int MaxValue = 6;
