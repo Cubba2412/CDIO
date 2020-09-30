@@ -3,17 +3,16 @@ import java.util.Arrays;
 
 public class RafleCup
 {
-    public int DiceArray[] = new int[2]
+    private  Dice Dice1;
+    private  Dice Dice2;
 
-    public void ShakeRafleCup()
+    //Constructor, this is what the raflecup contains which is two dice
+    public void rafleCup()
     {
-
-    }
-
-    public void throw()
-    {
-
-
+     //Creating the first dice
+     Dice1 = new Dice();
+     //Creating second dice
+     Dice2 = new Dice();
     }
 }
 
