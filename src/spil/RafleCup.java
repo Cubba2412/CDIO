@@ -2,7 +2,6 @@ package spil;
 
 public class RafleCup
 {
-    Game game = new Game();
     public static   Dice Dice1;
     private  static Dice Dice2;
     public static int ValueOfDice1, ValueOfDice2;
