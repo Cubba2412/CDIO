@@ -23,7 +23,7 @@ public class Game {
         String player2Name = scanner.nextLine();
         player2 = new Player(player2Name);
 
-        System.out.println();
+        //System.out.println();
 
         //player1 starts the game
         currentPlayer = player1;
@@ -44,7 +44,7 @@ public class Game {
             raflecup.rafleCup();
             //Throwing the dice
 
-            int diceResult[] = raflecup.throwDice();
+            int[] diceResult = raflecup.throwDice();
             System.out.println("Dice1 value: " + diceResult[0]);
             System.out.println("Dice2 value: " + diceResult[1]);
                         var diceCombinedValue = diceResult[0] + diceResult[1];
