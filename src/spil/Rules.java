@@ -10,7 +10,7 @@ public class Rules {
         return Player;
     }
 
-    static boolean extraTurn(int Dice1, int Dice2, Player Player) {
+    static boolean extraTurn(int Dice1, int Dice2) {
         if (Dice1 == Dice2) {
             return true;
         }
