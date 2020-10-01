@@ -55,7 +55,7 @@ public class Game {
                 gameIsRunning = false;
                 return; //exit the method
             }
-            if(!Rules.extraTurn(dice1Value, dice2Value,currentPlayer)) {
+            if(!Rules.extraTurn(dice1Value, dice2Value)) {
                 if (currentPlayer == player1) {
                     currentPlayer = player2;
                 } else {
