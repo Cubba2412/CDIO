@@ -23,8 +23,6 @@ public class Game {
         String player2Name = scanner.nextLine();
         player2 = new Player(player2Name);
 
-        //System.out.println();
-
         //player1 starts the game
         currentPlayer = player1;
 
@@ -38,16 +36,16 @@ public class Game {
 
             System.out.println(currentPlayer.getName() + "'s turn. Throw dice (Enter)");
             String waitForDiceThrow = scanner.nextLine();
-           // int dice1Value = generateRandomDiceValue();
-           // int dice2Value = generateRandomDiceValue();
+
             //Creating two dice
             raflecup.rafleCup();
             //Throwing the dice
-
             int[] diceResult = raflecup.throwDice();
+            //printing out the result
             System.out.println("Dice1 value: " + diceResult[0]);
-            System.out.println("Dice2 value: " + diceResult[1]);
-                        var diceCombinedValue = diceResult[0] + diceResult[1];
+            System.out.println("Dice2 value: " + diceResult[1]);a
+            //Sum
+            var diceCombinedValue = diceResult[0] + diceResult[1];
             currentPlayer.updatePoints(diceCombinedValue);
             System.out.println(currentPlayer.getName() + " total points: " + currentPlayer.getPoints());
 
@@ -70,12 +68,4 @@ public class Game {
 
         }
     }
-
-   /* private int generateRandomDiceValue(){
-        int diceMinimumValue = 1;
-        int diceMaximumValue = 6;
-        return diceMinimumValue + random.nextInt((diceMaximumValue - diceMinimumValue) + 1);
-    }*/
-
 }
-
