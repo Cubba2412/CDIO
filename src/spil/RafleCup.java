@@ -23,7 +23,5 @@ public class RafleCup
      ValueOfDice2 = Dice2.roll();
      return new int[]{ValueOfDice1, ValueOfDice2};
     }
-
-
 }
 
