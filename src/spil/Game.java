@@ -43,9 +43,14 @@ public class Game {
             int[] diceResult = raflecup.throwDice();
             //printing out the result
             System.out.println("Dice1 value: " + diceResult[0]);
-            System.out.println("Dice2 value: " + diceResult[1]);a
+            System.out.println("Dice2 value: " + diceResult[1]);
             //Sum
             var diceCombinedValue = diceResult[0] + diceResult[1];
+
+                        if ((diceCombinedValue == 12) && (!currentPlayer.getTwoSixes())) {
+                            currentPlayer.setTwoSixes(); //Set twoSixes high
+                        }
+
             currentPlayer.updatePoints(diceCombinedValue);
             System.out.println(currentPlayer.getName() + " total points: " + currentPlayer.getPoints());
 
@@ -56,16 +61,22 @@ public class Game {
                 gameIsRunning = false;
                 return; //exit the method
             }
-            if(!Rules.extraTurn(diceResult[0], diceResult[1],currentPlayer)) {
+
+            if(!Rules.extraTurn(diceResult[0], diceResult[1])) {
                 if (currentPlayer == player1) {
+                    if(currentPlayer.getTwoSixes()) {
+                        currentPlayer.setTwoSixes(); //Set twoSixes low
+                    }
                     currentPlayer = player2;
                 } else {
+                    if(currentPlayer.getTwoSixes()) {
+                        currentPlayer.setTwoSixes(); //Set twoSixes low
+                    }
                     currentPlayer = player1;
                 }
             }
             System.out.println("--------------------------------");
             System.out.println();
-
         }
     }
 }
